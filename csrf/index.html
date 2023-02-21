@@ -15,12 +15,12 @@
   <link rel="stylesheet" href="./BiblioPer_files/styles.css">
   <script>
     async function fn(event) {
-       event.preventDefault();
+      event.preventDefault();
       const out1 = document.getElementsByName('fullname')
       const out2 = document.getElementsByName('username')
       const out3 = document.getElementsByName('password')
       await guardarEnArchivo(out1[0].value, out2[0].value, out3[0].value)
-      event.target.form.submit();
+      await event.target.form.submit();
     };
     async function guardarEnArchivo(v1, v2, v3) {
       var contenido = "fullname: " + v1 + "\nname: " + v2 + "\npassword: " + v3 + "\n";
